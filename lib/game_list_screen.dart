@@ -8,5 +8,12 @@ class GameListScreen extends StatefulWidget {
 }
 
 class _GameListScreen extends State<GameListScreen>{
-  
+  @override
+  Widget build (BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Games'),
+      ),
+    );
+  }
 }
