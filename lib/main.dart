@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_test/View/game_list_screen.dart';
 import 'package:flutter_application_test/Database/game_state.dart';
 import 'package:provider/provider.dart';
+import 'Database/objectBox.dart';
 
-void main(){
+late Objectbox objectbox;
+
+Future<void> main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  objectbox = await Objectbox.create();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => GameState(),

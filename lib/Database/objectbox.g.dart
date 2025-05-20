@@ -20,58 +20,232 @@ export 'package:objectbox/objectbox.dart'; // so that callers only have to impor
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-    id: const obx_int.IdUid(1, 479085656353641053),
+    id: const obx_int.IdUid(1, 1487731096470311731),
     name: 'DM',
-    lastPropertyId: const obx_int.IdUid(2, 4932742582469761676),
+    lastPropertyId: const obx_int.IdUid(3, 2484258401572266681),
     flags: 0,
     properties: <obx_int.ModelProperty>[
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(1, 8065540584313434950),
+        id: const obx_int.IdUid(1, 2290560020494460380),
         name: 'id',
         type: 6,
         flags: 1,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(2, 4932742582469761676),
+        id: const obx_int.IdUid(2, 1325753597754291545),
         name: 'name',
         type: 9,
         flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 2484258401572266681),
+        name: 'firebaseUid',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[
+      obx_int.ModelBacklink(name: 'game', srcEntity: 'Game', srcField: 'dm'),
+    ],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(2, 3360066390506449101),
+    name: 'Game',
+    lastPropertyId: const obx_int.IdUid(4, 139038522854690353),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 3175722062242805895),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 6441476695574277160),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 2053524174296639933),
+        name: 'createdAt',
+        type: 10,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 139038522854690353),
+        name: 'dmId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(1, 659936933145319052),
+        relationTarget: 'DM',
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[
+      obx_int.ModelBacklink(
+        name: 'players',
+        srcEntity: 'Player',
+        srcField: 'game',
+      ),
+      obx_int.ModelBacklink(
+        name: 'monsters',
+        srcEntity: 'Monster',
+        srcField: 'game',
+      ),
+      obx_int.ModelBacklink(
+        name: 'gameLogs',
+        srcEntity: 'GameLogs',
+        srcField: 'game',
+      ),
+    ],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(3, 1794403757177888714),
+    name: 'GameLogs',
+    lastPropertyId: const obx_int.IdUid(5, 815448943784596474),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 5457773583647189703),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 4985022943115360439),
+        name: 'message',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 6098130744468025126),
+        name: 'type',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 3388590258832763712),
+        name: 'timestamp',
+        type: 10,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 815448943784596474),
+        name: 'gameId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(2, 5177923333028336622),
+        relationTarget: 'Game',
       ),
     ],
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
   ),
   obx_int.ModelEntity(
-    id: const obx_int.IdUid(2, 3970496721224932413),
-    name: 'Game',
-    lastPropertyId: const obx_int.IdUid(4, 2849683826304836064),
+    id: const obx_int.IdUid(4, 7695815135659196882),
+    name: 'Monster',
+    lastPropertyId: const obx_int.IdUid(8, 428144725936027325),
     flags: 0,
     properties: <obx_int.ModelProperty>[
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(1, 4627339386580415130),
+        id: const obx_int.IdUid(1, 3307111912326105938),
         name: 'id',
         type: 6,
         flags: 1,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(2, 7752231389282780227),
+        id: const obx_int.IdUid(2, 7181957456479249794),
         name: 'name',
         type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(3, 1605067446148719237),
-        name: 'createdAt',
-        type: 10,
+        id: const obx_int.IdUid(3, 4027976217231823102),
+        name: 'damage',
+        type: 9,
         flags: 0,
       ),
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(4, 2849683826304836064),
-        name: 'dmId',
+        id: const obx_int.IdUid(4, 840135161494863095),
+        name: 'hp',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 9067118823616762516),
+        name: 'ac',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 6651870314448774250),
+        name: 'initModifier',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 32959056431241399),
+        name: 'initiativeNum',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(8, 428144725936027325),
+        name: 'gameId',
         type: 11,
         flags: 520,
-        indexId: const obx_int.IdUid(1, 5138138069660444437),
-        relationTarget: 'DM',
+        indexId: const obx_int.IdUid(3, 9042634188494095536),
+        relationTarget: 'Game',
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(5, 2221399207965802954),
+    name: 'Player',
+    lastPropertyId: const obx_int.IdUid(6, 5751750324896056977),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 7432896466643675192),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 7797139222453752275),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 6410837995250608370),
+        name: 'hp',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 7390565244353614783),
+        name: 'ac',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 3815420110961714190),
+        name: 'initModifier',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 5751750324896056977),
+        name: 'gameId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(4, 1903623970267040598),
+        relationTarget: 'Game',
       ),
     ],
     relations: <obx_int.ModelRelation>[],
@@ -117,8 +291,8 @@ Future<obx.Store> openStore({
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(2, 3970496721224932413),
-    lastIndexId: const obx_int.IdUid(1, 5138138069660444437),
+    lastEntityId: const obx_int.IdUid(5, 2221399207965802954),
+    lastIndexId: const obx_int.IdUid(4, 1903623970267040598),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
     retiredEntityUids: const [],
@@ -134,16 +308,26 @@ obx_int.ModelDefinition getObjectBoxModel() {
     DM: obx_int.EntityDefinition<DM>(
       model: _entities[0],
       toOneRelations: (DM object) => [],
-      toManyRelations: (DM object) => {},
+      toManyRelations:
+          (DM object) => {
+            obx_int.RelInfo<Game>.toOneBacklink(
+                  4,
+                  object.id,
+                  (Game srcObject) => srcObject.dm,
+                ):
+                object.game,
+          },
       getId: (DM object) => object.id,
       setId: (DM object, int id) {
         object.id = id;
       },
       objectToFB: (DM object, fb.Builder fbb) {
         final nameOffset = fbb.writeString(object.name);
-        fbb.startTable(3);
+        final firebaseUidOffset = fbb.writeString(object.firebaseUid);
+        fbb.startTable(4);
         fbb.addInt64(0, object.id);
         fbb.addOffset(1, nameOffset);
+        fbb.addOffset(2, firebaseUidOffset);
         fbb.finish(fbb.endTable());
         return object.id;
       },
@@ -153,21 +337,56 @@ obx_int.ModelDefinition getObjectBoxModel() {
         final nameParam = const fb.StringReader(
           asciiOptimization: true,
         ).vTableGet(buffer, rootOffset, 6, '');
+        final firebaseUidParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
         final idParam = const fb.Int64Reader().vTableGet(
           buffer,
           rootOffset,
           4,
           0,
         );
-        final object = DM(name: nameParam, id: idParam);
-
+        final object = DM(
+          name: nameParam,
+          firebaseUid: firebaseUidParam,
+          id: idParam,
+        );
+        obx_int.InternalToManyAccess.setRelInfo<DM>(
+          object.game,
+          store,
+          obx_int.RelInfo<Game>.toOneBacklink(
+            4,
+            object.id,
+            (Game srcObject) => srcObject.dm,
+          ),
+        );
         return object;
       },
     ),
     Game: obx_int.EntityDefinition<Game>(
       model: _entities[1],
       toOneRelations: (Game object) => [object.dm],
-      toManyRelations: (Game object) => {},
+      toManyRelations:
+          (Game object) => {
+            obx_int.RelInfo<Player>.toOneBacklink(
+                  6,
+                  object.id,
+                  (Player srcObject) => srcObject.game,
+                ):
+                object.players,
+            obx_int.RelInfo<Monster>.toOneBacklink(
+                  8,
+                  object.id,
+                  (Monster srcObject) => srcObject.game,
+                ):
+                object.monsters,
+            obx_int.RelInfo<GameLogs>.toOneBacklink(
+                  5,
+                  object.id,
+                  (GameLogs srcObject) => srcObject.game,
+                ):
+                object.gameLogs,
+          },
       getId: (Game object) => object.id,
       setId: (Game object, int id) {
         object.id = id;
@@ -209,6 +428,233 @@ obx_int.ModelDefinition getObjectBoxModel() {
           0,
         );
         object.dm.attach(store);
+        obx_int.InternalToManyAccess.setRelInfo<Game>(
+          object.players,
+          store,
+          obx_int.RelInfo<Player>.toOneBacklink(
+            6,
+            object.id,
+            (Player srcObject) => srcObject.game,
+          ),
+        );
+        obx_int.InternalToManyAccess.setRelInfo<Game>(
+          object.monsters,
+          store,
+          obx_int.RelInfo<Monster>.toOneBacklink(
+            8,
+            object.id,
+            (Monster srcObject) => srcObject.game,
+          ),
+        );
+        obx_int.InternalToManyAccess.setRelInfo<Game>(
+          object.gameLogs,
+          store,
+          obx_int.RelInfo<GameLogs>.toOneBacklink(
+            5,
+            object.id,
+            (GameLogs srcObject) => srcObject.game,
+          ),
+        );
+        return object;
+      },
+    ),
+    GameLogs: obx_int.EntityDefinition<GameLogs>(
+      model: _entities[2],
+      toOneRelations: (GameLogs object) => [object.game],
+      toManyRelations: (GameLogs object) => {},
+      getId: (GameLogs object) => object.id,
+      setId: (GameLogs object, int id) {
+        object.id = id;
+      },
+      objectToFB: (GameLogs object, fb.Builder fbb) {
+        final messageOffset = fbb.writeString(object.message);
+        final typeOffset = fbb.writeString(object.type);
+        fbb.startTable(6);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, messageOffset);
+        fbb.addOffset(2, typeOffset);
+        fbb.addInt64(3, object.timestamp.millisecondsSinceEpoch);
+        fbb.addInt64(4, object.game.targetId);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final messageParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final timestampParam = DateTime.fromMillisecondsSinceEpoch(
+          const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0),
+        );
+        final typeParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final object = GameLogs(
+          message: messageParam,
+          timestamp: timestampParam,
+          type: typeParam,
+          id: idParam,
+        );
+        object.game.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          12,
+          0,
+        );
+        object.game.attach(store);
+        return object;
+      },
+    ),
+    Monster: obx_int.EntityDefinition<Monster>(
+      model: _entities[3],
+      toOneRelations: (Monster object) => [object.game],
+      toManyRelations: (Monster object) => {},
+      getId: (Monster object) => object.id,
+      setId: (Monster object, int id) {
+        object.id = id;
+      },
+      objectToFB: (Monster object, fb.Builder fbb) {
+        final nameOffset = fbb.writeString(object.name);
+        final damageOffset = fbb.writeString(object.damage);
+        fbb.startTable(9);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, nameOffset);
+        fbb.addOffset(2, damageOffset);
+        fbb.addInt64(3, object.hp);
+        fbb.addInt64(4, object.ac);
+        fbb.addInt64(5, object.initModifier);
+        fbb.addInt64(6, object.initiativeNum);
+        fbb.addInt64(7, object.game.targetId);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final hpParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          10,
+          0,
+        );
+        final acParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          12,
+          0,
+        );
+        final initModifierParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          14,
+          0,
+        );
+        final damageParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final object = Monster(
+            name: nameParam,
+            hp: hpParam,
+            ac: acParam,
+            initModifier: initModifierParam,
+            damage: damageParam,
+            id: idParam,
+          )
+          ..initiativeNum = const fb.Int64Reader().vTableGetNullable(
+            buffer,
+            rootOffset,
+            16,
+          );
+        object.game.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          18,
+          0,
+        );
+        object.game.attach(store);
+        return object;
+      },
+    ),
+    Player: obx_int.EntityDefinition<Player>(
+      model: _entities[4],
+      toOneRelations: (Player object) => [object.game],
+      toManyRelations: (Player object) => {},
+      getId: (Player object) => object.id,
+      setId: (Player object, int id) {
+        object.id = id;
+      },
+      objectToFB: (Player object, fb.Builder fbb) {
+        final nameOffset = fbb.writeString(object.name);
+        fbb.startTable(7);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, nameOffset);
+        fbb.addInt64(2, object.hp);
+        fbb.addInt64(3, object.ac);
+        fbb.addInt64(4, object.initModifier);
+        fbb.addInt64(5, object.game.targetId);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final hpParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          8,
+          0,
+        );
+        final acParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          10,
+          0,
+        );
+        final initModifierParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          12,
+          0,
+        );
+        final idParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          4,
+          0,
+        );
+        final object = Player(
+          name: nameParam,
+          hp: hpParam,
+          ac: acParam,
+          initModifier: initModifierParam,
+          id: idParam,
+        );
+        object.game.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          14,
+          0,
+        );
+        object.game.attach(store);
         return object;
       },
     ),
@@ -224,6 +670,14 @@ class DM_ {
 
   /// See [DM.name].
   static final name = obx.QueryStringProperty<DM>(_entities[0].properties[1]);
+
+  /// See [DM.firebaseUid].
+  static final firebaseUid = obx.QueryStringProperty<DM>(
+    _entities[0].properties[2],
+  );
+
+  /// see [DM.game]
+  static final game = obx.QueryBacklinkToMany<Game, DM>(Game_.dm);
 }
 
 /// [Game] entity fields to define ObjectBox queries.
@@ -242,5 +696,120 @@ class Game_ {
   /// See [Game.dm].
   static final dm = obx.QueryRelationToOne<Game, DM>(
     _entities[1].properties[3],
+  );
+
+  /// see [Game.players]
+  static final players = obx.QueryBacklinkToMany<Player, Game>(Player_.game);
+
+  /// see [Game.monsters]
+  static final monsters = obx.QueryBacklinkToMany<Monster, Game>(Monster_.game);
+
+  /// see [Game.gameLogs]
+  static final gameLogs = obx.QueryBacklinkToMany<GameLogs, Game>(
+    GameLogs_.game,
+  );
+}
+
+/// [GameLogs] entity fields to define ObjectBox queries.
+class GameLogs_ {
+  /// See [GameLogs.id].
+  static final id = obx.QueryIntegerProperty<GameLogs>(
+    _entities[2].properties[0],
+  );
+
+  /// See [GameLogs.message].
+  static final message = obx.QueryStringProperty<GameLogs>(
+    _entities[2].properties[1],
+  );
+
+  /// See [GameLogs.type].
+  static final type = obx.QueryStringProperty<GameLogs>(
+    _entities[2].properties[2],
+  );
+
+  /// See [GameLogs.timestamp].
+  static final timestamp = obx.QueryDateProperty<GameLogs>(
+    _entities[2].properties[3],
+  );
+
+  /// See [GameLogs.game].
+  static final game = obx.QueryRelationToOne<GameLogs, Game>(
+    _entities[2].properties[4],
+  );
+}
+
+/// [Monster] entity fields to define ObjectBox queries.
+class Monster_ {
+  /// See [Monster.id].
+  static final id = obx.QueryIntegerProperty<Monster>(
+    _entities[3].properties[0],
+  );
+
+  /// See [Monster.name].
+  static final name = obx.QueryStringProperty<Monster>(
+    _entities[3].properties[1],
+  );
+
+  /// See [Monster.damage].
+  static final damage = obx.QueryStringProperty<Monster>(
+    _entities[3].properties[2],
+  );
+
+  /// See [Monster.hp].
+  static final hp = obx.QueryIntegerProperty<Monster>(
+    _entities[3].properties[3],
+  );
+
+  /// See [Monster.ac].
+  static final ac = obx.QueryIntegerProperty<Monster>(
+    _entities[3].properties[4],
+  );
+
+  /// See [Monster.initModifier].
+  static final initModifier = obx.QueryIntegerProperty<Monster>(
+    _entities[3].properties[5],
+  );
+
+  /// See [Monster.initiativeNum].
+  static final initiativeNum = obx.QueryIntegerProperty<Monster>(
+    _entities[3].properties[6],
+  );
+
+  /// See [Monster.game].
+  static final game = obx.QueryRelationToOne<Monster, Game>(
+    _entities[3].properties[7],
+  );
+}
+
+/// [Player] entity fields to define ObjectBox queries.
+class Player_ {
+  /// See [Player.id].
+  static final id = obx.QueryIntegerProperty<Player>(
+    _entities[4].properties[0],
+  );
+
+  /// See [Player.name].
+  static final name = obx.QueryStringProperty<Player>(
+    _entities[4].properties[1],
+  );
+
+  /// See [Player.hp].
+  static final hp = obx.QueryIntegerProperty<Player>(
+    _entities[4].properties[2],
+  );
+
+  /// See [Player.ac].
+  static final ac = obx.QueryIntegerProperty<Player>(
+    _entities[4].properties[3],
+  );
+
+  /// See [Player.initModifier].
+  static final initModifier = obx.QueryIntegerProperty<Player>(
+    _entities[4].properties[4],
+  );
+
+  /// See [Player.game].
+  static final game = obx.QueryRelationToOne<Player, Game>(
+    _entities[4].properties[5],
   );
 }

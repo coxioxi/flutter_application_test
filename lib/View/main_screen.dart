@@ -8,17 +8,6 @@ import 'dice_roll_screen.dart';
 import 'initiatives.dart';
 import 'config_screen.dart';
 
-class MainScreen extends StatelessWidget{
-  const MainScreen ({super.key});
-
-  @override
-  Widget build (BuildContext context){
-    return MaterialApp(
-      home: _MainScreen()
-    );
-  }
-}
-
 class _MainScreen extends StatefulWidget{
   @override
   State<_MainScreen> createState() => _MainScreenState();

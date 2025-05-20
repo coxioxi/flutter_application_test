@@ -4,59 +4,195 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:479085656353641053",
-      "lastPropertyId": "2:4932742582469761676",
+      "id": "1:1487731096470311731",
+      "lastPropertyId": "3:2484258401572266681",
       "name": "DM",
       "properties": [
         {
-          "id": "1:8065540584313434950",
+          "id": "1:2290560020494460380",
           "name": "id",
           "type": 6,
           "flags": 1
         },
         {
-          "id": "2:4932742582469761676",
+          "id": "2:1325753597754291545",
           "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:2484258401572266681",
+          "name": "firebaseUid",
           "type": 9
         }
       ],
       "relations": []
     },
     {
-      "id": "2:3970496721224932413",
-      "lastPropertyId": "4:2849683826304836064",
+      "id": "2:3360066390506449101",
+      "lastPropertyId": "4:139038522854690353",
       "name": "Game",
       "properties": [
         {
-          "id": "1:4627339386580415130",
+          "id": "1:3175722062242805895",
           "name": "id",
           "type": 6,
           "flags": 1
         },
         {
-          "id": "2:7752231389282780227",
+          "id": "2:6441476695574277160",
           "name": "name",
           "type": 9
         },
         {
-          "id": "3:1605067446148719237",
+          "id": "3:2053524174296639933",
           "name": "createdAt",
           "type": 10
         },
         {
-          "id": "4:2849683826304836064",
+          "id": "4:139038522854690353",
           "name": "dmId",
           "type": 11,
           "flags": 520,
-          "indexId": "1:5138138069660444437",
+          "indexId": "1:659936933145319052",
           "relationTarget": "DM"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:1794403757177888714",
+      "lastPropertyId": "5:815448943784596474",
+      "name": "GameLogs",
+      "properties": [
+        {
+          "id": "1:5457773583647189703",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4985022943115360439",
+          "name": "message",
+          "type": 9
+        },
+        {
+          "id": "3:6098130744468025126",
+          "name": "type",
+          "type": 9
+        },
+        {
+          "id": "4:3388590258832763712",
+          "name": "timestamp",
+          "type": 10
+        },
+        {
+          "id": "5:815448943784596474",
+          "name": "gameId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "2:5177923333028336622",
+          "relationTarget": "Game"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:7695815135659196882",
+      "lastPropertyId": "8:428144725936027325",
+      "name": "Monster",
+      "properties": [
+        {
+          "id": "1:3307111912326105938",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7181957456479249794",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:4027976217231823102",
+          "name": "damage",
+          "type": 9
+        },
+        {
+          "id": "4:840135161494863095",
+          "name": "hp",
+          "type": 6
+        },
+        {
+          "id": "5:9067118823616762516",
+          "name": "ac",
+          "type": 6
+        },
+        {
+          "id": "6:6651870314448774250",
+          "name": "initModifier",
+          "type": 6
+        },
+        {
+          "id": "7:32959056431241399",
+          "name": "initiativeNum",
+          "type": 6
+        },
+        {
+          "id": "8:428144725936027325",
+          "name": "gameId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "3:9042634188494095536",
+          "relationTarget": "Game"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:2221399207965802954",
+      "lastPropertyId": "6:5751750324896056977",
+      "name": "Player",
+      "properties": [
+        {
+          "id": "1:7432896466643675192",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:7797139222453752275",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:6410837995250608370",
+          "name": "hp",
+          "type": 6
+        },
+        {
+          "id": "4:7390565244353614783",
+          "name": "ac",
+          "type": 6
+        },
+        {
+          "id": "5:3815420110961714190",
+          "name": "initModifier",
+          "type": 6
+        },
+        {
+          "id": "6:5751750324896056977",
+          "name": "gameId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "4:1903623970267040598",
+          "relationTarget": "Game"
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "2:3970496721224932413",
-  "lastIndexId": "1:5138138069660444437",
+  "lastEntityId": "5:2221399207965802954",
+  "lastIndexId": "4:1903623970267040598",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
