@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_test/game_list_screen.dart';
-import 'game_list_screen.dart';
+//import 'package:flutter_application_test/game_list_screen.dart';
+//import 'sign_up_screen.dart';
+//import 'game_list_screen.dart';
 
-class SignUpScreen extends StatefulWidget{
-  const SignUpScreen({super.key});
+
+class LoginScreen extends StatefulWidget{
+  const LoginScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreen();
+  State<LoginScreen> createState() => _LoginScreen();
 }
 
-class _SignUpScreen extends State<SignUpScreen> {
+class _LoginScreen extends State<LoginScreen>{
+
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
-  final TextEditingController _confirmPassword = TextEditingController();
 
   @override
   void dispose() {
     _username.dispose();
     _password.dispose();
-    _confirmPassword.dispose();
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build (BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -52,22 +53,25 @@ class _SignUpScreen extends State<SignUpScreen> {
 
             SizedBox(height: 16),
 
-            TextField(
-              controller: _confirmPassword,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Confirm Password',
-                border: OutlineInputBorder(),
-              ),
+            ElevatedButton(
+              onPressed:() {
+                //TODO: uncoment when ready for user auth 
+                //Navigator.pushReplacement(
+                //  context, 
+                //  MaterialPageRoute(builder: (context) => const GameListScreen()),
+                //);
+              },
+              child: const Text('Log In'),
             ),
 
             SizedBox(height: 16),
 
             ElevatedButton(
-              onPressed: () {
+              onPressed: (){
+                //TODO: uncoment when ready for user auth 
                 //Navigator.pushReplacement(
                 //  context,
-                //  MaterialPageRoute(builder: (context) => const GameListScreen()),
+                //  MaterialPageRoute(builder: (context) => const SignUpScreen()),
                 //);
               }, 
               child: const Text('Sign Up'))
@@ -75,5 +79,5 @@ class _SignUpScreen extends State<SignUpScreen> {
         ),
       )
     );
-  }
+  } 
 }

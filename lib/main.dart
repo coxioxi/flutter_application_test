@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_test/game_list_screen.dart';
-import 'package:flutter_application_test/game_state.dart';
+import 'package:flutter_application_test/View/game_list_screen.dart';
+import 'package:flutter_application_test/Database/game_state.dart';
 import 'package:provider/provider.dart';
 
 void main(){

@@ -14,6 +14,10 @@ class _GameListScreen extends State<GameListScreen>{
       appBar: AppBar(
         title: Text('My Games'),
       ),
+
+      body: Container(
+
+      )
     );
   }
 }
