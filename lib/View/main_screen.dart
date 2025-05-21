@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'combat_screen.dart';
@@ -7,6 +6,17 @@ import 'monsters_screen.dart';
 import 'dice_roll_screen.dart';
 import 'initiatives.dart';
 import 'config_screen.dart';
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: _MainScreen(),
+    );
+  }
+}
 
 class _MainScreen extends StatefulWidget{
   @override

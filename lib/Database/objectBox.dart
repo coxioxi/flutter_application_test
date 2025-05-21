@@ -1,3 +1,5 @@
+import 'package:flutter_application_test/main.dart';
+
 import 'data_model.dart';
 import 'objectbox.g.dart';
 
@@ -38,12 +40,23 @@ class Objectbox {
     return gameBox.put(newGame);
   }
 
+  void removeGame(Game game) {
+    gameBox.remove(game.id);
+  }
+
   /// Adds a new [DM] (Dungeon Master) with the specified name and Firebase UID.
   ///
   /// Returns the ID of the inserted DM.
   int addDm(String dmName, String uid) {
     DM newDm = DM(name: dmName, firebaseUid: uid);
     return dmBox.put(newDm);
+  }
+
+  DM? getDm(String uid) {
+    final query = dmBox.query(DM_.firebaseUid.equals(uid)).build();
+    final result = query.findFirst();
+    query.close();
+    return result;
   }
 
   /// Adds a new [GameLogs] entry to the specified [Game], with the given message and type.
@@ -78,9 +91,7 @@ class Objectbox {
     }
 
     final query = gameLogsBox
-        .query(
-          GameLogs_.game.equals(game.id).and(GameLogs_.type.equals(type)),
-        )
+        .query(GameLogs_.game.equals(game.id).and(GameLogs_.type.equals(type)),)
         .order(GameLogs_.timestamp, flags: Order.descending);
 
     return query.watch(triggerImmediately: true).map((query) => query.find());

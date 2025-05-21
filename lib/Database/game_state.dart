@@ -21,16 +21,16 @@ import 'package:flutter/material.dart';
 /// final currentGameId = Provider.of<GameState>(context).gameId;
 /// ```
 class GameState extends ChangeNotifier {
-  String? _gameId;
+  int? _gameId;
 
   /// Gets the current game ID.
-  String? get gameId => _gameId;
+  int? get gameId => _gameId;
 
   /// Updates the current game ID and notifies listeners.
   ///
   /// Use this when a user selects a different saved game so that
   /// other parts of the app can react and load the corresponding data.
-  void setGameId(String id) {
+  void setGameId(int id) {
     _gameId = id;
     notifyListeners();
   }

@@ -87,6 +87,8 @@ class Player {
 
   int initModifier; // Initiative modifier (used to calculate turn order)
 
+  int? initiativeNum; // Initiative value after rolling (nullable until set)
+
   // Relationship to the Game entity (each player belongs to one game)
   final game = ToOne<Game>();
 
