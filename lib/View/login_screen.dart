@@ -1,7 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_test/game_list_screen.dart';
-//import 'sign_up_screen.dart';
-//import 'game_list_screen.dart';
+import 'sign_up_screen.dart';
+import 'game_list_screen.dart';
 
 
 class LoginScreen extends StatefulWidget{
@@ -26,58 +26,81 @@ class _LoginScreen extends State<LoginScreen>{
   @override
   Widget build (BuildContext context) {
     return Scaffold(
-      body: Padding(
+      appBar: AppBar(title: const Text('Login'),),
+
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-            TextField(
-              controller: _username,
-              decoration: const InputDecoration(
-                labelText: 'Username',
-                border: OutlineInputBorder(),
-              ),
+        children: [
+          
+          // User name text field
+          TextField(
+            controller: _username,
+            decoration: const InputDecoration(
+              labelText: 'Username',
+              border: OutlineInputBorder(),
             ),
+          ),
 
-            SizedBox(height: 16),
+          SizedBox(height: 16),
 
-            TextField(
-              controller: _password,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
+          // Password text field
+          TextField(
+            controller: _password,
+            obscureText: true,
+            decoration: const InputDecoration(
+              labelText: 'Password',
+              border: OutlineInputBorder(),
             ),
+          ),
 
-            SizedBox(height: 16),
+          SizedBox(height: 16),
 
-            ElevatedButton(
-              onPressed:() {
-                //TODO: uncoment when ready for user auth 
-                //Navigator.pushReplacement(
-                //  context, 
-                //  MaterialPageRoute(builder: (context) => const GameListScreen()),
-                //);
-              },
-              child: const Text('Log In'),
+          // Login button, push and replaces with game screen view
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const GameListScreen()),
+              );
+            }, 
+            child: const Text('Login')
+          ),
+
+          SizedBox(height: 16),
+
+          // Sign up gesture detector, takes to the sign up page
+          GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SignUpScreen())
             ),
-
-            SizedBox(height: 16),
-
-            ElevatedButton(
-              onPressed: (){
-                //TODO: uncoment when ready for user auth 
-                //Navigator.pushReplacement(
-                //  context,
-                //  MaterialPageRoute(builder: (context) => const SignUpScreen()),
-                //);
-              }, 
-              child: const Text('Sign Up'))
-          ],
-        ),
-      )
+            
+            child: Center(
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(color: Colors.black),
+                  text: "Don't have an account? ",
+                  children: [
+                    TextSpan(
+                      text: "Sign Up",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold
+                      ),
+                      recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => SignUpScreen())
+                        );
+                      }
+                    )
+                  ]
+                ),
+              )
+            )
+          )
+        ],
+      ),
     );
   } 
 }

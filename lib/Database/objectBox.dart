@@ -1,5 +1,3 @@
-import 'package:flutter_application_test/main.dart';
-
 import 'data_model.dart';
 import 'objectbox.g.dart';
 

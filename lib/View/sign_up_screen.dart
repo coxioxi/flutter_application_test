@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_test/game_list_screen.dart';
-//import 'game_list_screen.dart';
+import 'game_list_screen.dart';
 
 class SignUpScreen extends StatefulWidget{
   const SignUpScreen({super.key});
@@ -23,57 +22,56 @@ class _SignUpScreen extends State<SignUpScreen> {
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      appBar: AppBar(title: const Text('Sign Up'),),
+
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-
-            TextField(
-              controller: _username,
-              decoration: const InputDecoration(
-                labelText: 'Username',
-                border: OutlineInputBorder(),
-              ),
+        children: [
+          TextField(
+            controller: _username,
+            decoration: const InputDecoration(
+              labelText: 'Username',
+              border: OutlineInputBorder(),
             ),
+          ),
 
-            SizedBox(height: 16),
+          SizedBox(height: 16),
 
-            TextField(
-              controller: _password,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
+          TextField(
+            controller: _password,
+            obscureText: true,
+            decoration: const InputDecoration(
+              labelText: 'Password',
+              border: OutlineInputBorder(),
             ),
+          ),
 
-            SizedBox(height: 16),
+          SizedBox(height: 16),
 
-            TextField(
-              controller: _confirmPassword,
-              obscureText: true,
-              decoration: const InputDecoration(
-                labelText: 'Confirm Password',
-                border: OutlineInputBorder(),
-              ),
+          TextField(
+            controller: _confirmPassword,
+            obscureText: true,
+            decoration: const InputDecoration(
+              labelText: 'Confirm Password',
+              border: OutlineInputBorder(),
             ),
+          ),
 
-            SizedBox(height: 16),
+          SizedBox(height: 16),
 
-            ElevatedButton(
-              onPressed: () {
-                //Navigator.pushReplacement(
-                //  context,
-                //  MaterialPageRoute(builder: (context) => const GameListScreen()),
-                //);
-              }, 
-              child: const Text('Sign Up'))
-          ],
-        ),
-      )
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const GameListScreen()),
+              );
+            }, 
+            child: const Text('Sign Up')
+          )
+        ],
+      ),
     );
   }
 }

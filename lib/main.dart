@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_test/View/game_list_screen.dart';
 import 'package:flutter_application_test/Database/game_state.dart';
 import 'package:provider/provider.dart';
 import 'Database/objectBox.dart';
+import 'View/login_screen.dart';
 
 late Objectbox objectbox;
 
@@ -29,7 +29,7 @@ class TestApp extends StatelessWidget{
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: GameListScreen(),
+      home: LoginScreen(),
     );
   }
 }
